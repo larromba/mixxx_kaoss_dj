@@ -1,6 +1,39 @@
 function KAOSSDJ() {};
 
+// LEDs all first bytes between 0x80 and 0xEF
+
+
+KAOSSDJ.init = function (id, debugging) {
+    midi.sendShortMsg(0x97, 0x96, 0x7F)
+    // turn on all LEDs
+    for (var i = 0x00; i <= 0xFF; i++) {
+        for(var n = 0xB6; n <= 0xB8; n++) {
+            midi.sendShortMsg(n, i, 0x7F);
+      };
+    };
+};
+
+
 KAOSSDJ();
+
+var leds_channel = {
+  'buttons-right': 0x98,
+  'buttons-left': 0x97,
+  'knobs-right': 0xB8,
+  'knobs-left': 0xB7,
+  'master': 0xB6
+};
+
+var leds = {
+  'cue': 0x1E,
+  'sync': 0x1D,
+  'play': 0x1B,
+  'headphones': 0x19,
+  'fx': 0x18, //warning something up with this
+  'strip_three': 0x17,
+  'strip_one': 0x15,
+};
+
 
 KAOSSDJ.deck = function(decknum) {
     this.decknum = decknum;
