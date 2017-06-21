@@ -308,6 +308,25 @@
               </options>
             </control>
         </controls>
-        <outputs/>
+        <outputs>
+          <output>
+              <group>[Channel2]</group>
+              <key>sync_enabled</key>
+              <status>0x98</status>
+              <midino>0x1D</midino>
+              <on>0x00</on>
+              <off>0x7F</off>
+              <maximum>0</maximum>
+          </output>
+          <output>
+              <group>[Channel1]</group>
+              <key>sync_enabled</key>
+              <status>0x97</status>
+              <midino>0x1D</midino>
+              <on>0x00</on>
+              <off>0x7F</off>
+              <maximum>0</maximum>
+          </output>
+      </outputs>
     </controller>
 </MixxxControllerPreset>
