@@ -12,6 +12,16 @@ KAOSSDJ.init = function (id, debugging) {
       };
     };
 };
+KAOSSDJ.shutdown = function (id, debugging) {
+    midi.sendShortMsg(0x97, 0x96, 0x7F)
+    // turn on all LEDs
+    for (var i = 0x00; i <= 0xFF; i++) {
+        for(var n = 0xB6; n <= 0xB8; n++) {
+            midi.sendShortMsg(n, i, 0x00);
+      };
+    };
+};
+
 
 
 KAOSSDJ();
