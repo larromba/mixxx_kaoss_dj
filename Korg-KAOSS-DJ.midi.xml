@@ -2,7 +2,7 @@
 <MixxxControllerPreset mixxxVersion="2.0.0" schemaVersion="1">
     <info>
         <name>Korg KAOSS DJ</name>
-        <author>Seb Dooris.</author>
+        <author>Seb Dooris, Fayaaz Ahmed</author>
         <description>Controller mapping for the Korg KAOSS DJ Controller.</description>
 		<wiki></wiki>
         <forums>https://www.mixxx.org/forums/viewtopic.php?f=7&amp;t=8479</forums>
@@ -12,7 +12,7 @@
             <file functionprefix="KAOSSDJ" filename="Korg-KAOSS-DJ-scripts.js"/>
         </scriptfiles>
         <controls>
-        
+
 <!-- JOG WHEELS-->
             <control>
                 <group>[Channel1]</group>
@@ -113,7 +113,7 @@
                 <status>0xB7</status>
                 <midino>0x1D</midino>
                 <options>
-                    <normal/>   
+                    <normal/>
                 </options>
             </control>
             <control>
@@ -228,10 +228,20 @@
                 </options>
             </control>
             <control>
-                <group>[Playlist]</group>
-                <key>LoadSelectedIntoFirstStopped</key>
-                <description>Load into focus track free Slot</description>
+                <group>[Channel1]</group>
+                <key>LoadSelectedTrack</key>
+                <description>Load into Deck 1</description>
                 <status>0x97</status>
+                <midino>0x0E</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>LoadSelectedTrack</key>
+                <description>Load into Deck 2</description>
+                <status>0x98</status>
                 <midino>0x0E</midino>
                 <options>
                     <normal/>
@@ -276,6 +286,26 @@
                 <options>
                     <normal/>
                 </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>pregain</key>
+                <description>Right Gain</description>
+                <status>0xB8</status>
+                <midino>0x1A</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+              <group>[Library]</group>
+              <key>MoveVertical</key>
+              <description>Scroll Library</description>
+              <status>0xB6</status>
+              <midino>0x1E</midino>
+              <options>
+                  <selectknob/>
+              </options>
             </control>
         </controls>
         <outputs/>
