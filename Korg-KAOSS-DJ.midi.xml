@@ -16,6 +16,16 @@
 <!-- JOG WHEELS-->
             <control>
                 <group>[Channel1]</group>
+                <key>KAOSSDJ.scratchMode</key>
+                <description>Scratch mode button</description>
+                <status>0x97</status>
+                <midino>0x16</midino>
+                <options>
+                    <Script-Binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
                 <key>KAOSSDJ.wheelTouch</key>
                 <description>Left Jog Wheel Touch</description>
                 <status>0x97</status>
@@ -30,6 +40,26 @@
                 <description>Left Jog Wheel Turn</description>
                 <status>0xB7</status>
                 <midino>0x0E</midino>
+                <options>
+                    <Script-Binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>KAOSSDJ.wheelTurn</key>
+                <description>Left Jog Wheel Turn Scratch</description>
+                <status>0xB7</status>
+                <midino>0x10</midino>
+                <options>
+                    <Script-Binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>KAOSSDJ.scratchMode</key>
+                <description>Scratch mode button</description>
+                <status>0x98</status>
+                <midino>0x16</midino>
                 <options>
                     <Script-Binding/>
                 </options>
@@ -50,6 +80,16 @@
                 <description>Right Jog Wheel Turn</description>
                 <status>0xB8</status>
                 <midino>0x0E</midino>
+                <options>
+                    <Script-Binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>KAOSSDJ.wheelTurn</key>
+                <description>Right Jog Wheel Turn SCRATCH</description>
+                <status>0xB8</status>
+                <midino>0x10</midino>
                 <options>
                     <Script-Binding/>
                 </options>
@@ -309,24 +349,24 @@
             </control>
         </controls>
         <outputs>
-          <output>
-              <group>[Channel2]</group>
-              <key>sync_enabled</key>
-              <status>0x98</status>
-              <midino>0x1D</midino>
-              <on>0x00</on>
-              <off>0x7F</off>
-              <maximum>0</maximum>
-          </output>
-          <output>
-              <group>[Channel1]</group>
-              <key>sync_enabled</key>
-              <status>0x97</status>
-              <midino>0x1D</midino>
-              <on>0x00</on>
-              <off>0x7F</off>
-              <maximum>0</maximum>
-          </output>
-      </outputs>
+      <output>
+          <group>[Channel2]</group>
+          <key>sync_enabled</key>
+          <status>0x98</status>
+          <midino>0x1D</midino>
+          <on>0x00</on>
+          <off>0x7F</off>
+          <maximum>0</maximum>
+      </output>
+      <output>
+          <group>[Channel1]</group>
+          <key>sync_enabled</key>
+          <status>0x97</status>
+          <midino>0x1D</midino>
+          <on>0x00</on>
+          <off>0x7F</off>
+          <maximum>0</maximum>
+      </output>
+  </outputs>
     </controller>
 </MixxxControllerPreset>
