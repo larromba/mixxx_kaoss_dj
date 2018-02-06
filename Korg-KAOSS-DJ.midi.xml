@@ -2,7 +2,7 @@
 <MixxxControllerPreset schemaVersion="1" mixxxVersion="2.0.0">
     <info>
         <name>Korg KAOSS DJ</name>
-        <author>Seb Dooris, Fayaaz Ahmed</author>
+        <author>Seb Dooris, Fayaaz Ahmed, Lee Arromba</author>
         <description>Controller mapping for the Korg KAOSS DJ Controller.</description>
         <forums>https://www.mixxx.org/forums/viewtopic.php?f=7&amp;t=8479</forums>
     </info>
