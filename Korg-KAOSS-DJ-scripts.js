@@ -1,20 +1,19 @@
 // Korg KAOSS DJ controller mapping for Mixxx
 // Seb Dooris, Fayaaz Ahmed, Lee Arromba
 
-function KAOSSDJ() {};
-                     
-const ON = 0x7F, 
+var KAOSSDJ = {};  
+var ON = 0x7F, 
     OFF = 0x00, 
     UP = 0x01, 
     DOWN = 0x7F;
-const ledChannel = {
+var ledChannel = {
     'btnsL': 0x97,
     'btnsR': 0x98,
     'knobsL': 0xB7,
     'knobsR': 0xB8,
     'master': 0xB6
 };
-const led = {
+var led = {
     'cue': 0x1E,
     'sync': 0x1D,
     'play': 0x1B,
@@ -178,7 +177,7 @@ KAOSSDJ.rightFxSwitch = function(channel, control, value, status, group) {
     }
 };
 
-KAOSSDJ.controllerFxTouchMove = function(channel, control, value, status, group) {
+KAOSSDJ.controllerFxTouchMoveVertical = function(channel, control, value, status, group) {
     var decks = KAOSSDJ.decks;
     for(key in decks) {
         var deck = decks[key];
@@ -188,7 +187,18 @@ KAOSSDJ.controllerFxTouchMove = function(channel, control, value, status, group)
     }
 };
 
+KAOSSDJ.controllerFxTouchMoveHorizontal = function(channel, control, value, status, group) {
+    var decks = KAOSSDJ.decks;
+    for(key in decks) {
+        var deck = decks[key];
+        if(deck.fx) {
+            engine.setValue('[EffectRack1_EffectUnit'+deck.deckNumber +']', 'super1', value / 127);
+        }
+    }
+};
+
 KAOSSDJ.controllerFxTouchUp = function(channel, control, value, status, group) {
     var deck = KAOSSDJ.getDeckByChannel(channel);
     engine.setValue('[EffectRack1_EffectUnit'+deck.deckNumber +']', 'mix', 0);
+    engine.setValue('[EffectRack1_EffectUnit'+deck.deckNumber +']', 'super1', 0);
 };
